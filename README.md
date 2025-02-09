@@ -46,7 +46,7 @@ chmod +x auto-ssl.sh
 - **SSH bağlantısı için parola yerine SSH anahtarı kullanılmalıdır.**
 - **Cloudflare API bilgileri güvenli bir şekilde saklanmalıdır.**
 - **Apache ve WAF sunucularının uygun izinlere sahip olduğundan emin olun.**
-
+-- **Bu sistem, aapanel ve aawaf'ın yapısına göre hazırlanmıştır. Kendi kullanmış olduğunuz web panel ve WAF'a göre değiştirebilirsiniz.**
 ---
 Bu betik, **otomatik SSL yenileme ve güvenli WAF entegrasyonu** sağlamak için tasarlanmıştır. 🚀
 
