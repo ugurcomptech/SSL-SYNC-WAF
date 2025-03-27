@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # 🌍 Değişkenler
-DOMAIN=""
-EMAIL=""  
-SOURCE_CERT_PATH="/www/server/panel/vhost/cert/$DOMAIN"
-DEST_CERT_PATH="/www/cloud_waf/nginx/conf.d/cert/"
+DOMAIN="r"
+EMAIL=""
+SOURCE_CERT_PATH=""
+DEST_CERT_PATH=""
 WAF_SERVER=""
 WAF_USER=""
-WAF_PASSWORD=""  
+WAF_PASSWORD=""
 
 # Cloudflare API bilgileri (Gizli dosyadan okunmalı)
 CLOUDFLARE_CREDENTIALS="/root/.cloudflare.ini"
