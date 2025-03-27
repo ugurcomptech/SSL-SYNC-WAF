@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # 🌍 Değişkenler
-DOMAIN="example.com"
-EMAIL="admin@example.com"
+DOMAIN=""
+EMAIL=""  
 SOURCE_CERT_PATH="/www/server/panel/vhost/cert/$DOMAIN"
-DEST_CERT_PATH="/www/cloud_waf/nginx/conf.d/cert/example_com"
-WAF_SERVER="your.waf.server.ip"
-WAF_USER="your_waf_user"
-WAF_PASSWORD=""
+DEST_CERT_PATH="/www/cloud_waf/nginx/conf.d/cert/"
+WAF_SERVER=""
+WAF_USER=""
+WAF_PASSWORD=""  
 
 # Cloudflare API bilgileri (Gizli dosyadan okunmalı)
 CLOUDFLARE_CREDENTIALS="/root/.cloudflare.ini"
@@ -30,7 +30,7 @@ mv -f $SOURCE_CERT_PATH/*.pem $SOURCE_CERT_PATH/backup/ || echo "Eski sertifikal
 
 #  Yeni SSL sertifikası oluştur (Cloudflare DNS doğrulaması ile)
 echo "Yeni SSL sertifikası oluşturuluyor (Cloudflare)..."
-certbot certonly --dns-cloudflare --dns-cloudflare-credentials $CLOUDFLARE_CREDENTIALS --email $EMAIL -d $DOMAIN --agree-tos --non-interactive || { echo "❌ Yeni SSL sertifikası oluşturulamadı!" ; exit 1; }
+certbot certonly --dns-cloudflare --dns-cloudflare-credentials $CLOUDFLARE_CREDENTIALS --email $EMAIL -d $DOMAIN --agree-tos --non-interactive  --force-renewal || { echo "❌ Yeni SSL sertifikası oluşturulamadı!" ; exit 1; }
 
 #  Yeni sertifikaları belirlenen dizine taşı
 echo "Yeni SSL sertifikaları belirtilen dizine taşınıyor..."
